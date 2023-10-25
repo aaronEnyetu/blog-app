@@ -6,7 +6,7 @@ type Props = {}
 function Header({}: Props) {
   return (
       <div className='border-b border-black flex justify-between'>
-          <Link href='/' className='text-4xl'>LifeBlog</Link>
+          <Link href='/' className='text-4xl'>CodeBlog</Link>
           <button className='text-white bg-slate-600 px-4 py-4 '>Sign In</button>
     </div>
   )
