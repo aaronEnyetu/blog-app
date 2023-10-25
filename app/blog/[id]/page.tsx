@@ -1,10 +1,23 @@
 import React from 'react'
+import { prisma } from '@/lib/prisma'
 
-type Props = {}
 
-const page = (props: Props) => {
+
+const page = async ({ params }: {
+
+    params: {
+        id: string
+    }
+}) => {
+    const post = await prisma.post.findUnique({
+        where: {
+            id: Number(params.id) 
+        }
+    })
+    console.log(post)
   return (
-    <div>page</div>
+    //   <div>page: { params.id}</div>
+      <div>{post && <><h1>{post.title}</h1><p>{post.content }</p> </>}</div>
   )
 }
 
